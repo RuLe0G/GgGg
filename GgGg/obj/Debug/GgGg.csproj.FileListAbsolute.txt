@@ -13,9 +13,9 @@ D:\Prog\GgGg\GgGg\obj\Debug\GgGg.csproj.GenerateResource.cache
 D:\Prog\GgGg\GgGg\obj\Debug\GgGg.csproj.CoreCompileInputs.cache
 D:\Prog\GgGg\GgGg\obj\Debug\GgGg.exe
 D:\Prog\GgGg\GgGg\obj\Debug\GgGg.pdb
-D:\Prog\GgGg\GgGg\obj\Debug\Page1.g.cs
-D:\Prog\GgGg\GgGg\obj\Debug\Page2.g.cs
-D:\Prog\GgGg\GgGg\obj\Debug\Page3.g.cs
-D:\Prog\GgGg\GgGg\obj\Debug\Page1.baml
-D:\Prog\GgGg\GgGg\obj\Debug\Page2.baml
-D:\Prog\GgGg\GgGg\obj\Debug\Page3.baml
+D:\Prog\GgGg\GgGg\obj\Debug\Pages\Page1.g.cs
+D:\Prog\GgGg\GgGg\obj\Debug\Pages\Page2.g.cs
+D:\Prog\GgGg\GgGg\obj\Debug\Pages\Page3.g.cs
+D:\Prog\GgGg\GgGg\obj\Debug\Pages\Page1.baml
+D:\Prog\GgGg\GgGg\obj\Debug\Pages\Page2.baml
+D:\Prog\GgGg\GgGg\obj\Debug\Pages\Page3.baml
