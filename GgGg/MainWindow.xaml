@@ -6,15 +6,24 @@
         xmlns:local="clr-namespace:GgGg"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Storyboard x:Key="sbShowLeftMenu" >
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" From="0,0,0,0" To="-100,0,0,0" DecelerationRatio=".9" Duration="0:0:1" />
+        </Storyboard>
+        <Storyboard x:Key="sbHideLeftMenu">
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" From="-100,0,0,0" To="0,0,0,0" AccelerationRatio=".9" Duration="0:0:1" />
+        </Storyboard>
+    </Window.Resources>
     <Grid>
+        <Frame x:Name="Frame" Content="Frame" Height="420" Margin="0,0,0,-1" VerticalAlignment="Top" Background="Red"/>
         <StackPanel x:Name="Stack" HorizontalAlignment="Left" Height="420" VerticalAlignment="Top" Width="100" Background="Blue">
             <Label Content="" Height="30"/>
             <Button x:Name="But1" Content="1" HorizontalAlignment="Left" Width="100" Click="But1_Click"/>
             <Button x:Name="But2" Content="2" HorizontalAlignment="Left" Width="100" Click="But2_Click"/>
             <Button x:Name="But3" Content="3" HorizontalAlignment="Left" Width="100" Click="But3_Click"/>
-        </StackPanel>
-        <Frame x:Name="Frame" Content="Frame" Height="420" Margin="100,0,-0.4,0" VerticalAlignment="Top" Background="Red"/>
-        <Button Content="Скрыть" Height="30" Width="70" Margin="0,0,723.6,390" Click="Button_Click"/>
-
+        </StackPanel>        
+        <Button Name="btnLeftMenuHide" Click="btnLeftMenuHide_Click" Content="Показать" Margin="0,0,692,389"  Visibility="Hidden" />
+        <Button Name="btnLeftMenuShow" Click="btnLeftMenuShow_Click" Content="Скрыть" Margin="0,0,692,389"/>
+        <TextBox x:Name="tb" HorizontalAlignment="Left" Height="23" Margin="395,169,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Window>

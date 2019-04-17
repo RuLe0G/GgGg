@@ -24,5 +24,11 @@ namespace GgGg
         {
             InitializeComponent();
         }
+
+        public Page1(string a)
+        {
+            InitializeComponent();
+            tb.Text = a;
+        }
     }
 }

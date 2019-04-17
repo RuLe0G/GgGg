@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Media.Animation;
 
 namespace GgGg
 {
@@ -21,59 +22,24 @@ namespace GgGg
     /// </summary>
     public partial class MainWindow : Window
     {
-        System.Windows.Threading.DispatcherTimer Timer;
+       
         int i = 100;
-        bool st = true;
+        
         public MainWindow()
         {
             InitializeComponent();
-            Timer = new System.Windows.Threading.DispatcherTimer();
-            Timer.Interval = new TimeSpan(0, 0, 0, 0, 1);
             Frame.NavigationUIVisibility = NavigationUIVisibility.Hidden;
         }
 
 
-        private void Tick1(object sender, EventArgs e)
-        {
-            if (i < 4) { Timer.Stop(); st = false; }
-            else
-            {
-                Stack.Width = i;
-                Frame.Margin = new Thickness((i - 4), 0, 0, 0);
-                i -= 4;
-            }
-        }
+      
 
-        private void Tick2(object sender, EventArgs e)
-        {
-            if (i > 96) { Timer.Stop(); st = true; }
-            else
-            {
-                Stack.Width = i;
-                Frame.Margin = new Thickness((i + 4), 0, 0, 0);
-                i += 4;
-            }
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-            if (st == true)
-            {
-                Timer.Tick += new EventHandler(Tick1);
-                Timer.Start();
-                
-            }
-            else
-            {
-                Timer.Tick += new EventHandler(Tick2);
-                Timer.Start();
-            }
-        }
+        
 
         private void But1_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(new Page1());
+            string a = tb.Text.ToString();
+            Frame.Navigate(new Page1(a));
 
         }
 
@@ -87,6 +53,32 @@ namespace GgGg
         {
             Frame.Navigate(new Page3());
 
+        }
+
+            private void btnLeftMenuHide_Click(object sender, RoutedEventArgs e)
+            {
+                ShowHideMenu("sbHideLeftMenu", btnLeftMenuHide, btnLeftMenuShow, Stack);
+            }
+        private void btnLeftMenuShow_Click(object sender, RoutedEventArgs e)
+        {
+            ShowHideMenu("sbShowLeftMenu", btnLeftMenuHide, btnLeftMenuShow, Stack);
+        }
+
+        private void ShowHideMenu(string Storyboard, Button btnHide, Button btnShow, StackPanel pnl)
+        {
+            Storyboard sb = Resources[Storyboard] as Storyboard;
+            sb.Begin(pnl);
+
+            if (Storyboard.Contains("Show"))
+            {
+                btnHide.Visibility = System.Windows.Visibility.Visible;
+                btnShow.Visibility = System.Windows.Visibility.Hidden;
+            }
+            else if (Storyboard.Contains("Hide"))
+            {
+                btnHide.Visibility = System.Windows.Visibility.Hidden;
+                btnShow.Visibility = System.Windows.Visibility.Visible;
+            }
         }
     }
 }
